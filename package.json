@@ -1,0 +1,19 @@
+{
+  "name": "randomeet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "simple-peer": "^9.11.1",
+    "socket.io": "^4.8.1",
+    "stripe": "^17.6.0",
+    "webrtc-adapter": "^9.0.1"
+  }
+}

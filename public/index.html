@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomeet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.11.0/simplepeer.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AdmnUp9SN1GOyABLC6eCPdOVfp9LKOAMy0-_N8fXRrCZM6avN7FPHTq_7EH69DhxFbtnIEuWnAIbGWY4&currency=USD"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Randomeet Logo">
+        <h1>Randomeet</h1>
+        <div id="onlineUsers">Online Users: 0</div>
+    </div>
+    <div class="container">
+        <div id="interests">
+            <label><input type="checkbox" value="music"> Music</label>
+            <label><input type="checkbox" value="movies"> Movies</label>
+            <label><input type="checkbox" value="sports"> Sports</label>
+            <label><input type="checkbox" value="gaming"> Gaming</label>
+            <button id="startChat">Start Chat</button>
+        </div>
+        <div class="video-container">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+        </div>
+        <div id="chat"></div>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendMessage">Send</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <div class="container donation-section">
+        <h2>Support Our Cause</h2>
+        <p>Your donation helps homeless elderly people.</p>
+        <form id="donationForm">
+            <input type="text" id="donorName" placeholder="Your Name" required>
+            <input type="number" id="donationAmount" placeholder="Amount ($)" required>
+            <div id="cardElement"></div>
+            <button type="submit">Donate with Stripe</button>
+        </form>
+        <div id="paypal-button-container"></div>
+        <h3>Recent Donors</h3>
+        <table id="donorsTable">
+            <thead><tr><th>Name</th><th>Amount</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
